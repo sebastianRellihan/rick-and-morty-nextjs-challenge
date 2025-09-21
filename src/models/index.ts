@@ -48,9 +48,9 @@ export interface PaginationParams {
  */
 export interface CharacterFilters {
   name?: string;
-  status?: CharacterStatus;
+  status?: 'Alive' | 'Dead' | 'unknown';
   species?: string;
-  gender?: CharacterGender;
+  gender?: 'Female' | 'Male' | 'Genderless' | 'unknown';
 }
 
 /**
@@ -74,7 +74,10 @@ export interface AppConfig {
  * Estado global de la aplicación
  */
 export interface AppState {
-  selectedCharacters: SelectedCharacters;
+  selectedCharacters: {
+    character1: number | null;
+    character2: number | null;
+  };
   currentPage: {
     character1: number;
     character2: number;
