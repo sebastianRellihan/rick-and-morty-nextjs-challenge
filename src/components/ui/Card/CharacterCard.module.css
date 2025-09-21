@@ -1,0 +1,97 @@
+/* Character Card Specific Styles */
+.characterCard {
+  background-color: var(--color-dark-blue);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  position: relative;
+  cursor: pointer;
+}
+
+.characterCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.characterCard.selected {
+  border: 2px solid var(--color-acid-green);
+  background-color: rgba(147, 243, 115, 0.1);
+}
+
+.characterCard.notClickable {
+  cursor: default;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.img {
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  border: 2px solid var(--color-light-green);
+}
+
+.content {
+  text-align: center;
+}
+
+.name {
+  color: var(--color-acid-green);
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.25rem;
+  font-family: var(--font-heading);
+}
+
+.status {
+  margin-bottom: var(--spacing-sm);
+}
+
+.statusIndicator {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.species,
+.type,
+.episodes {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-xs);
+  font-size: 0.875rem;
+}
+
+.label {
+  color: var(--color-blue);
+  font-weight: 500;
+}
+
+.value {
+  color: var(--color-light-green);
+}
+
+.selectedIndicator {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  background-color: var(--color-acid-green);
+  color: var(--color-black);
+  border-radius: var(--radius-full);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+
+.checkmark {
+  line-height: 1;
+}

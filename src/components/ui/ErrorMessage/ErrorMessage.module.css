@@ -1,0 +1,46 @@
+/* Error Message Components */
+.errorMessage {
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  margin: var(--spacing-lg) 0;
+}
+
+.error {
+  background-color: rgba(255, 107, 107, 0.1);
+  border: 1px solid #ff6b6b;
+}
+
+.warning {
+  background-color: rgba(255, 193, 7, 0.1);
+  border: 1px solid #ffc107;
+}
+
+.info {
+  background-color: rgba(121, 231, 255, 0.1);
+  border: 1px solid var(--color-blue);
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+}
+
+.icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.text {
+  flex: 1;
+}
+
+.message {
+  margin-bottom: var(--spacing-md);
+  color: var(--color-light-green);
+  line-height: 1.5;
+}
+
+.retry {
+  margin-top: var(--spacing-sm);
+}
