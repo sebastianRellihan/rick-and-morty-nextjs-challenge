@@ -5,7 +5,6 @@ export default function Home() {
     <div className={cn('container', 'p-xl')}>
       <div className="text-center mb-xl">
         <h1 className="mb-md">Rick and Morty Challenge</h1>
-        <p className="mb-lg">Desafío de Rick and Morty</p>
 
         {/* Demo del sistema de diseño */}
         <div className="grid grid--2-cols mt-xl">
