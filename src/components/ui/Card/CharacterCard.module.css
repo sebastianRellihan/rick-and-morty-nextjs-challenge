@@ -1,12 +1,16 @@
-/* Character Card Specific Styles */
+/* Character Card - Horizontal Layout */
 .characterCard {
   background-color: var(--color-dark-blue);
   border-radius: var(--radius-lg);
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md);
   box-shadow: var(--shadow-md);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  transition: all var(--transition-fast);
   position: relative;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  min-height: 100px;
 }
 
 .characterCard:hover {
@@ -24,9 +28,7 @@
 }
 
 .image {
-  display: flex;
-  justify-content: center;
-  margin-bottom: var(--spacing-md);
+  flex-shrink: 0;
 }
 
 .img {
@@ -36,44 +38,43 @@
 }
 
 .content {
-  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
 }
 
 .name {
   color: var(--color-acid-green);
-  margin-bottom: var(--spacing-sm);
-  font-size: 1.25rem;
-  font-family: var(--font-heading);
-}
-
-.status {
-  margin-bottom: var(--spacing-sm);
-}
-
-.statusIndicator {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-xs);
+  font-size: 1.125rem;
   font-weight: 600;
-  font-size: 0.875rem;
+  margin: 0;
+  line-height: 1.3;
 }
 
-.species,
-.type,
-.episodes {
+.statusLine {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: var(--spacing-xs);
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.statusDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.statusText {
+  color: var(--color-light-green);
+  font-weight: 500;
   font-size: 0.875rem;
 }
 
-.label {
+.species {
   color: var(--color-blue);
-  font-weight: 500;
-}
-
-.value {
-  color: var(--color-light-green);
+  font-size: 0.875rem;
+  font-weight: 400;
 }
 
 .selectedIndicator {
@@ -83,8 +84,8 @@
   background-color: var(--color-acid-green);
   color: var(--color-black);
   border-radius: var(--radius-full);
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -94,4 +95,21 @@
 
 .checkmark {
   line-height: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .characterCard {
+    padding: var(--spacing-sm);
+    min-height: 80px;
+  }
+  
+  .name {
+    font-size: 1rem;
+  }
+  
+  .statusText,
+  .species {
+    font-size: 0.75rem;
+  }
 }

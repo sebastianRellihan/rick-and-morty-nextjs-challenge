@@ -83,10 +83,6 @@
   text-align: center;
 }
 
-.emptyIcon {
-  font-size: 4rem;
-  margin-bottom: var(--spacing-lg);
-}
 
 .emptyMessage {
   color: var(--color-light-green);
@@ -131,7 +127,15 @@
     height: 150px;
   }
   
-  .emptyIcon {
-    font-size: 3rem;
-  }
+}
+
+/* Error State */
+.error {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background-color: rgba(255, 107, 107, 0.1);
+  border: 1px solid #ff6b6b;
+  border-radius: var(--radius-md);
+  text-align: center;
+  color: var(--color-light-green);
 }

@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
-import './globals.css';
-import '@/styles/design-system.css';
+import '@/styles/variables.css';
+import '@/styles/globals.css';
+import '@/styles/typography.css';
+import '@/styles/utilities.css';
+import '@/styles/components.css';
 import { QueryProvider } from '@/components/providers/QueryProvider';
 
 export const metadata: Metadata = {

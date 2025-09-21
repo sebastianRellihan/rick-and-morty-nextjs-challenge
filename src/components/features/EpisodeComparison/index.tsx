@@ -6,11 +6,20 @@
 
 import { useEffect, useState } from 'react';
 import { useCharacterStore } from '@/stores/characterStore';
+import { useEpisodeComparison } from '@/hooks/api';
+import { EpisodeList } from '@/components/features/EpisodeList';
 import styles from './EpisodeComparison.module.css';
 
 export function EpisodeComparisonSection() {
   const { character1, character2, hasBothCharacters } = useCharacterStore();
   const [mounted, setMounted] = useState(false);
+
+  // Hook para comparación de episodios
+  const {
+    data: episodeComparison,
+    isLoading: episodesLoading,
+    error: episodesError,
+  } = useEpisodeComparison(character1, character2);
 
   // Evitar hidration mismatch
   useEffect(() => {
@@ -23,7 +32,6 @@ export function EpisodeComparisonSection() {
       <div className={styles.container}>
         <h2 className={styles.title}>Episode Comparison</h2>
         <div className={styles.emptyState}>
-          <div className={styles.emptyIcon}>📺</div>
           <p className={styles.emptyMessage}>
             Select two characters to see episode comparison
           </p>
@@ -40,7 +48,6 @@ export function EpisodeComparisonSection() {
       <div className={styles.container}>
         <h2 className={styles.title}>Episode Comparison</h2>
         <div className={styles.emptyState}>
-          <div className={styles.emptyIcon}>📺</div>
           <p className={styles.emptyMessage}>
             Select two characters to compare episodes between them
           </p>
@@ -74,34 +81,38 @@ export function EpisodeComparisonSection() {
       </div>
 
       <div className={styles.episodesGrid}>
-        <div className={styles.episodeColumn}>
-          <h3 className={styles.columnTitle}>
-            {character1?.name} - Only Episodes
-          </h3>
-          <div className={styles.placeholder}>
-            <p>Unique episodes of {character1?.name}</p>
-            <span className={styles.comingSoon}>Coming soon...</span>
-          </div>
-        </div>
+        {/* Character #1 Only Episodes */}
+        <EpisodeList
+          title={`${character1?.name} - Only Episodes`}
+          episodes={episodeComparison?.onlyCharacter1}
+          isLoading={episodesLoading}
+          className={styles.episodeColumn}
+        />
 
-        <div className={`${styles.episodeColumn} ${styles.sharedColumn}`}>
-          <h3 className={styles.columnTitle}>Shared Episodes</h3>
-          <div className={styles.placeholder}>
-            <p>Episodes where both appear</p>
-            <span className={styles.comingSoon}>Coming soon...</span>
-          </div>
-        </div>
+        {/* Shared Episodes */}
+        <EpisodeList
+          title="Shared Episodes"
+          episodes={episodeComparison?.shared}
+          isLoading={episodesLoading}
+          highlight={true}
+          className={`${styles.episodeColumn} ${styles.sharedColumn}`}
+        />
 
-        <div className={styles.episodeColumn}>
-          <h3 className={styles.columnTitle}>
-            {character2?.name} - Only Episodes
-          </h3>
-          <div className={styles.placeholder}>
-            <p>Unique episodes of {character2?.name}</p>
-            <span className={styles.comingSoon}>Coming soon...</span>
-          </div>
-        </div>
+        {/* Character #2 Only Episodes */}
+        <EpisodeList
+          title={`${character2?.name} - Only Episodes`}
+          episodes={episodeComparison?.onlyCharacter2}
+          isLoading={episodesLoading}
+          className={styles.episodeColumn}
+        />
       </div>
+
+      {/* Error handling */}
+      {episodesError && (
+        <div className={styles.error}>
+          <p>Error loading episodes: {episodesError.message}</p>
+        </div>
+      )}
     </div>
   );
 }

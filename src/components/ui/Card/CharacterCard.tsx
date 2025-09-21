@@ -34,22 +34,6 @@ function getStatusColor(status: Character['status']): string {
   }
 }
 
-/**
- * Obtiene el emoji del estado del personaje
- */
-function getStatusEmoji(status: Character['status']): string {
-  switch (status) {
-    case 'Alive':
-      return '🟢';
-    case 'Dead':
-      return '🔴';
-    case 'unknown':
-      return '🟡';
-    default:
-      return '⚪';
-  }
-}
-
 export function CharacterCard({
   character,
   isSelected = false,
@@ -91,8 +75,8 @@ export function CharacterCard({
         <Image
           src={character.image}
           alt={`Image of ${character.name}`}
-          width={120}
-          height={120}
+          width={80}
+          height={80}
           className={styles.img}
           priority={false}
         />
@@ -102,31 +86,14 @@ export function CharacterCard({
       <div className={styles.content}>
         <h3 className={styles.name}>{character.name}</h3>
 
-        <div className={styles.status}>
+        <div className={styles.statusLine}>
           <span
-            className={styles.statusIndicator}
-            style={{ color: getStatusColor(character.status) }}
+            className={styles.statusDot}
+            style={{ backgroundColor: getStatusColor(character.status) }}
             aria-label={`Status: ${character.status}`}
-          >
-            {getStatusEmoji(character.status)} {character.status}
-          </span>
-        </div>
-
-        <div className={styles.species}>
-          <span className={styles.label}>Species:</span>
-          <span className={styles.value}>{character.species}</span>
-        </div>
-
-        {character.type && (
-          <div className={styles.type}>
-            <span className={styles.label}>Type:</span>
-            <span className={styles.value}>{character.type}</span>
-          </div>
-        )}
-
-        <div className={styles.episodes}>
-          <span className={styles.label}>Episodes:</span>
-          <span className={styles.value}>{character.episode.length}</span>
+          />
+          <span className={styles.statusText}>{character.status}</span>
+          <span className={styles.species}>{character.species}</span>
         </div>
       </div>
 

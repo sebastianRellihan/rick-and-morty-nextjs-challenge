@@ -1,0 +1,43 @@
+/* ===== TYPOGRAPHY ===== */
+
+/* Custom Font */
+@font-face {
+  font-family: 'Get Schwifty';
+  src: url('/fonts/get_schwifty.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Typography Styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: var(--color-acid-green);
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--color-blue);
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: var(--color-acid-green);
+}
+
+/* Links */
+a {
+  color: var(--color-blue);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-acid-green);
+}

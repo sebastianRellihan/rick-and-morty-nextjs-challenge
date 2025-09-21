@@ -1,12 +1,9 @@
 /**
- * Exportaciones de componentes UI atómicos organizados por carpetas
+ * Exportaciones de componentes UI atómicos
  */
 
-// Button components
-export { Button } from './Button';
-
 // Card components
-export { CharacterCard } from './Card';
+export { CharacterCard, EpisodeCard } from './Card';
 
 // Loading components
 export { CharacterCardSkeleton, CharacterCardSkeletonGrid } from './Loading';

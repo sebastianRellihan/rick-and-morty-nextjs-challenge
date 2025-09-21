@@ -25,15 +25,8 @@ export function CharacterCardSkeleton({
         {/* Nombre */}
         <div className={styles.name} />
 
-        {/* Estado */}
+        {/* Estado y especie */}
         <div className={styles.status} />
-
-        {/* Información */}
-        <div className={styles.info}>
-          <div className={styles.infoLine} />
-          <div className={styles.infoLine} />
-          <div className={styles.infoLine} />
-        </div>
       </div>
     </div>
   );
