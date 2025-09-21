@@ -44,7 +44,7 @@ export function ErrorMessage({
               onClick={onRetry}
               type="button"
             >
-              Reintentar
+              Retry
             </button>
           )}
         </div>

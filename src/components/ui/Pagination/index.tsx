@@ -71,7 +71,7 @@ export function Pagination({
     <nav
       className={cn(styles.pagination, className)}
       role="navigation"
-      aria-label="Navegación de páginas"
+      aria-label="Page navigation"
     >
       <div className={styles.container}>
         {/* Botón anterior */}
@@ -83,9 +83,9 @@ export function Pagination({
           )}
           onClick={() => handlePageClick(currentPage - 1)}
           disabled={currentPage === 1 || isLoading}
-          aria-label="Página anterior"
+          aria-label="Previous page"
         >
-          ← Anterior
+          ← Previous
         </button>
 
         {/* Primera página */}
@@ -96,7 +96,7 @@ export function Pagination({
               onClick={() => handlePageClick(1)}
               onKeyDown={e => handleKeyDown(e, 1)}
               disabled={isLoading}
-              aria-label="Ir a página 1"
+              aria-label="Go to page 1"
               aria-current={1 === currentPage ? 'page' : undefined}
             >
               1
@@ -109,15 +109,11 @@ export function Pagination({
         {visiblePages.map(page => (
           <button
             key={page}
-            className={cn(
-              'styles.button',
-              'styles.button--page',
-              page === currentPage && 'styles.button--active',
-            )}
+            className={cn(styles.button, page === currentPage && styles.active)}
             onClick={() => handlePageClick(page)}
             onKeyDown={e => handleKeyDown(e, page)}
             disabled={isLoading}
-            aria-label={`Ir a página ${page}`}
+            aria-label={`Go to page ${page}`}
             aria-current={page === currentPage ? 'page' : undefined}
           >
             {page}
@@ -136,7 +132,7 @@ export function Pagination({
               onClick={() => handlePageClick(totalPages)}
               onKeyDown={e => handleKeyDown(e, totalPages)}
               disabled={isLoading}
-              aria-label={`Ir a página ${totalPages}`}
+              aria-label={`Go to page ${totalPages}`}
               aria-current={totalPages === currentPage ? 'page' : undefined}
             >
               {totalPages}
@@ -147,26 +143,25 @@ export function Pagination({
         {/* Botón siguiente */}
         <button
           className={cn(
-            'styles.button',
-            'styles.button--next',
-            (currentPage === totalPages || isLoading) &&
-              'styles.button--disabled',
+            styles.button,
+            styles.nextButton,
+            (currentPage === totalPages || isLoading) && styles.disabled,
           )}
           onClick={() => handlePageClick(currentPage + 1)}
           disabled={currentPage === totalPages || isLoading}
-          aria-label="Página siguiente"
+          aria-label="Next page"
         >
-          Siguiente →
+          Next →
         </button>
       </div>
 
       {/* Información de página */}
-      <div className="pagination__info">
-        <span className="pagination__info-text">
-          Página {currentPage} de {totalPages}
+      <div className={styles.info}>
+        <span className={styles.infoText}>
+          Page {currentPage} of {totalPages}
         </span>
         {isLoading && (
-          <span className="pagination__loading">
+          <span className={styles.loading}>
             <div className="loading-spinner loading-spinner--small" />
           </span>
         )}

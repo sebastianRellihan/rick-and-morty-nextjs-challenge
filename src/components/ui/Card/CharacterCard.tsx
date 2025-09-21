@@ -82,15 +82,15 @@ export function CharacterCard({
       aria-pressed={onClick ? isSelected : undefined}
       aria-label={
         onClick
-          ? `Seleccionar personaje ${character.name}`
-          : `Información de ${character.name}`
+          ? `Select character ${character.name}`
+          : `Information for ${character.name}`
       }
     >
       {/* Imagen del personaje */}
       <div className={styles.image}>
         <Image
           src={character.image}
-          alt={`Imagen de ${character.name}`}
+          alt={`Image of ${character.name}`}
           width={120}
           height={120}
           className={styles.img}
@@ -106,26 +106,26 @@ export function CharacterCard({
           <span
             className={styles.statusIndicator}
             style={{ color: getStatusColor(character.status) }}
-            aria-label={`Estado: ${character.status}`}
+            aria-label={`Status: ${character.status}`}
           >
             {getStatusEmoji(character.status)} {character.status}
           </span>
         </div>
 
         <div className={styles.species}>
-          <span className={styles.label}>Especie:</span>
+          <span className={styles.label}>Species:</span>
           <span className={styles.value}>{character.species}</span>
         </div>
 
         {character.type && (
           <div className={styles.type}>
-            <span className={styles.label}>Tipo:</span>
+            <span className={styles.label}>Type:</span>
             <span className={styles.value}>{character.type}</span>
           </div>
         )}
 
         <div className={styles.episodes}>
-          <span className={styles.label}>Episodios:</span>
+          <span className={styles.label}>Episodes:</span>
           <span className={styles.value}>{character.episode.length}</span>
         </div>
       </div>

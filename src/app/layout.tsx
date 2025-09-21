@@ -4,8 +4,8 @@ import '@/styles/design-system.css';
 import { QueryProvider } from '@/components/providers/QueryProvider';
 
 export const metadata: Metadata = {
-  title: 'Rick and Morty Challenge',
-  description: 'Challenge de Rick and Morty con Next.js y TypeScript',
+  title: 'Rick and Morty',
+  description: 'Challenge de Rick and Morty',
 };
 
 export default function RootLayout({
