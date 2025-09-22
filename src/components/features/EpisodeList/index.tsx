@@ -6,7 +6,6 @@ interface EpisodeListProps {
   title: string;
   episodes: Episode[] | undefined;
   isLoading?: boolean;
-  highlight?: boolean;
   className?: string;
 }
 
@@ -17,7 +16,6 @@ export function EpisodeList({
   title,
   episodes,
   isLoading = false,
-  highlight = false,
   className,
 }: EpisodeListProps) {
   return (
@@ -46,11 +44,7 @@ export function EpisodeList({
         ) : (
           <div className={styles.episodeGrid}>
             {episodes.map(episode => (
-              <EpisodeCard
-                key={episode.id}
-                episode={episode}
-                highlight={highlight}
-              />
+              <EpisodeCard key={episode.id} episode={episode} />
             ))}
           </div>
         )}

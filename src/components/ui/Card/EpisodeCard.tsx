@@ -10,22 +10,11 @@ import styles from './EpisodeCard.module.css';
 interface EpisodeCardProps {
   episode: Episode;
   className?: string;
-  highlight?: boolean;
 }
 
-export function EpisodeCard({
-  episode,
-  className,
-  highlight = false,
-}: EpisodeCardProps) {
+export function EpisodeCard({ episode, className }: EpisodeCardProps) {
   return (
-    <div
-      className={cn(
-        styles.episodeCard,
-        highlight && styles.highlight,
-        className,
-      )}
-    >
+    <div className={cn(styles.episodeCard, className)}>
       {/* Header del episodio */}
       <div className={styles.header}>
         <span className={styles.episodeCode}>
@@ -46,13 +35,6 @@ export function EpisodeCard({
           <span className={styles.value}>{episode.characters.length}</span>
         </div>
       </div>
-
-      {/* Indicador de episodio compartido */}
-      {highlight && (
-        <div className={styles.sharedIndicator}>
-          <span className={styles.sharedIcon}>⭐</span>
-        </div>
-      )}
     </div>
   );
 }

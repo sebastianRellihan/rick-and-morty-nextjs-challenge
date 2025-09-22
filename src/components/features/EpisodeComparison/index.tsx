@@ -93,7 +93,6 @@ export function EpisodeComparisonSection() {
           title="Shared Episodes"
           episodes={episodeComparison?.shared}
           isLoading={episodesLoading}
-          highlight={true}
           className={`${styles.episodeColumn} ${styles.sharedColumn}`}
         />
 
