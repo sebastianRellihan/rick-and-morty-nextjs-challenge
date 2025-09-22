@@ -9,22 +9,16 @@
 export interface Episode {
   /** ID único del episodio */
   id: number;
-
   /** Nombre del episodio */
   name: string;
-
   /** Fecha de emisión */
   air_date: string;
-
   /** Código del episodio (ej: S01E01) */
   episode: string;
-
   /** URLs de los personajes que aparecen en este episodio */
   characters: string[];
-
   /** URL de la API para obtener este episodio */
   url: string;
-
   /** Fecha de creación del registro */
   created: string;
 }
@@ -45,10 +39,8 @@ export interface EpisodeSummary {
 export interface EpisodeComparison {
   /** Episodios donde solo aparece el personaje 1 */
   onlyCharacter1: Episode[];
-
   /** Episodios donde aparecen ambos personajes */
   shared: Episode[];
-
   /** Episodios donde solo aparece el personaje 2 */
   onlyCharacter2: Episode[];
 }

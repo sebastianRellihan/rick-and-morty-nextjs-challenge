@@ -1,4 +1,4 @@
-/* Rick and Morty Themed Pagination */
+/* Pagination */
 .pagination {
   display: flex;
   flex-direction: column;
@@ -112,7 +112,6 @@
 
 .infoText {
   font-weight: 600;
-  font-family: var(--font-heading);
   color: var(--color-acid-green);
 }
 

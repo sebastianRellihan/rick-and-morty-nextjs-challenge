@@ -1,7 +1,3 @@
-/**
- * Re-export de todos los hooks de API
- */
-
 export {
   useCharacters,
   useCharacter,

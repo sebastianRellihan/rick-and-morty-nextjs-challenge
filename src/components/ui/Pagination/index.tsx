@@ -1,25 +1,18 @@
-/**
- * Componente de paginación reutilizable
- */
-
 import { cn } from '@/lib/utils';
 import styles from './Pagination.module.css';
 
 interface PaginationProps {
-  /** Página actual */
   currentPage: number;
-  /** Total de páginas */
   totalPages: number;
-  /** Función que se ejecuta al cambiar de página */
   onPageChange: (page: number) => void;
-  /** Si está cargando */
   isLoading?: boolean;
-  /** Clase CSS adicional */
   className?: string;
-  /** Número máximo de páginas a mostrar */
   maxVisible?: number;
 }
 
+/**
+ * Componente de paginación reutilizable
+ */
 export function Pagination({
   currentPage,
   totalPages,

@@ -8,13 +8,9 @@ import type { Character } from '@/models';
 import styles from './CharacterCard.module.css';
 
 interface CharacterCardProps {
-  /** Datos del personaje a mostrar */
   character: Character;
-  /** Si la card está seleccionada */
   isSelected?: boolean;
-  /** Función que se ejecuta al hacer clic en la card */
   onClick?: (character: Character) => void;
-  /** Clase CSS adicional */
   className?: string;
 }
 
@@ -91,6 +87,7 @@ export function CharacterCard({
             className={styles.statusDot}
             style={{ backgroundColor: getStatusColor(character.status) }}
             aria-label={`Status: ${character.status}`}
+            data-testid="status-dot"
           />
           <span className={styles.statusText}>{character.status}</span>
           <span className={styles.species}>{character.species}</span>

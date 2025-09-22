@@ -6,13 +6,9 @@ import { cn } from '@/lib/utils';
 import styles from './ErrorMessage.module.css';
 
 interface ErrorMessageProps {
-  /** Mensaje de error a mostrar */
   message: string;
-  /** Función para reintentar */
   onRetry?: () => void;
-  /** Clase CSS adicional */
   className?: string;
-  /** Tipo de error para estilos */
   variant?: 'error' | 'warning' | 'info';
 }
 

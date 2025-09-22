@@ -1,24 +1,18 @@
-/**
- * Componente para mostrar una lista de episodios
- */
-
 import { EpisodeCard } from '@/components/ui/Card/EpisodeCard';
 import type { Episode } from '@/models';
 import styles from './EpisodeList.module.css';
 
 interface EpisodeListProps {
-  /** Título de la lista */
   title: string;
-  /** Lista de episodios a mostrar */
   episodes: Episode[] | undefined;
-  /** Si está cargando */
   isLoading?: boolean;
-  /** Si debe resaltar los episodios (para compartidos) */
   highlight?: boolean;
-  /** Clase CSS adicional */
   className?: string;
 }
 
+/**
+ * Componente para mostrar una lista de episodios
+ */
 export function EpisodeList({
   title,
   episodes,

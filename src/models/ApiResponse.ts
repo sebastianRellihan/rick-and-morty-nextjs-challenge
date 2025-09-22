@@ -9,13 +9,10 @@
 export interface ApiInfo {
   /** Número total de registros */
   count: number;
-
   /** Número total de páginas */
   pages: number;
-
   /** URL de la página siguiente (null si es la última) */
   next: string | null;
-
   /** URL de la página anterior (null si es la primera) */
   prev: string | null;
 }
@@ -26,7 +23,6 @@ export interface ApiInfo {
 export interface ApiResponse<T> {
   /** Información de paginación */
   info: ApiInfo;
-
   /** Array de resultados del tipo especificado */
   results: T[];
 }

@@ -1,5 +1,6 @@
 import { CharacterListHydrated } from '@/components/features/CharacterList';
 import { EpisodeComparisonSection } from '@/components/features/EpisodeComparison';
+import ErrorBoundary from '@/components/ErrorBoundary';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -15,12 +16,16 @@ export default function Home() {
 
       {/* Sección de selección de personajes con paginación unificada */}
       <section className={styles.charactersSection}>
-        <CharacterListHydrated />
+        <ErrorBoundary>
+          <CharacterListHydrated />
+        </ErrorBoundary>
       </section>
 
       {/* Sección de comparación de episodios */}
       <section className={styles.episodesSection}>
-        <EpisodeComparisonSection />
+        <ErrorBoundary>
+          <EpisodeComparisonSection />
+        </ErrorBoundary>
       </section>
     </div>
   );

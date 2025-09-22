@@ -1,7 +1,3 @@
-/**
- * Componente para comparación de episodios entre personajes
- */
-
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -10,6 +6,9 @@ import { useEpisodeComparison } from '@/hooks/api';
 import { EpisodeList } from '@/components/features/EpisodeList';
 import styles from './EpisodeComparison.module.css';
 
+/**
+ * Componente para comparación de episodios entre personajes
+ */
 export function EpisodeComparisonSection() {
   const { character1, character2, hasBothCharacters } = useCharacterStore();
   const [mounted, setMounted] = useState(false);

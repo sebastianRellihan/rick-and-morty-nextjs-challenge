@@ -8,11 +8,8 @@ import type { Episode } from '@/models';
 import styles from './EpisodeCard.module.css';
 
 interface EpisodeCardProps {
-  /** Datos del episodio a mostrar */
   episode: Episode;
-  /** Clase CSS adicional */
   className?: string;
-  /** Si debe resaltar el episodio (para episodios compartidos) */
   highlight?: boolean;
 }
 
