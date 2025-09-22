@@ -23,8 +23,12 @@ export function compareEpisodeIds(
   shared: number[];
   onlyCharacter2: number[];
 } {
-  const char1Ids = character1Episodes.map(extractIdFromUrl).filter((id): id is number => id !== null);
-  const char2Ids = character2Episodes.map(extractIdFromUrl).filter((id): id is number => id !== null);
+  const char1Ids = character1Episodes
+    .map(extractIdFromUrl)
+    .filter((id): id is number => id !== null);
+  const char2Ids = character2Episodes
+    .map(extractIdFromUrl)
+    .filter((id): id is number => id !== null);
 
   const char1Set = new Set(char1Ids);
   const char2Set = new Set(char2Ids);
@@ -92,7 +96,9 @@ export function getAllEpisodeIds(
   const episodes1 = character1?.episode || [];
   const episodes2 = character2?.episode || [];
   const allUrls = [...episodes1, ...episodes2];
-  const allIds = allUrls.map(extractIdFromUrl).filter((id): id is number => id !== null);
+  const allIds = allUrls
+    .map(extractIdFromUrl)
+    .filter((id): id is number => id !== null);
   return [...new Set(allIds)];
 }
 

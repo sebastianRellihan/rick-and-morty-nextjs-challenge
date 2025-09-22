@@ -114,7 +114,7 @@
   .charactersGrid {
     gap: var(--spacing-xl);
   }
-  
+
   .cardGrid {
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: var(--spacing-md);
@@ -126,22 +126,22 @@
     grid-template-columns: 1fr;
     gap: var(--spacing-lg);
   }
-  
+
   .columnHeader {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--spacing-sm);
   }
-  
+
   .selectedInfo {
     width: 100%;
     justify-content: space-between;
   }
-  
+
   .cardGrid {
     grid-template-columns: 1fr;
   }
-  
+
   .mainTitle {
     font-size: 1.5rem;
   }
@@ -151,11 +151,11 @@
   .container {
     margin-bottom: var(--spacing-xl);
   }
-  
+
   .header {
     padding: var(--spacing-md);
   }
-  
+
   .characterColumn {
     padding: var(--spacing-md);
   }

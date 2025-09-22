@@ -18,12 +18,12 @@ export const createTestQueryClient = () => {
 };
 
 // Test wrapper with QueryClient
-export const TestQueryWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const TestQueryWrapper: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const queryClient = createTestQueryClient();
   return (
-    <QueryClientProvider client={queryClient}>
-      {children}
-    </QueryClientProvider>
+    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
   );
 };
 

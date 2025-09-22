@@ -14,7 +14,7 @@ describe('Pagination', () => {
         currentPage={1}
         totalPages={5}
         onPageChange={mockOnPageChange}
-      />
+      />,
     );
 
     expect(screen.getByText('1')).toBeInTheDocument();
@@ -30,7 +30,7 @@ describe('Pagination', () => {
         currentPage={3}
         totalPages={5}
         onPageChange={mockOnPageChange}
-      />
+      />,
     );
 
     const currentPageButton = screen.getByText('3');
@@ -43,7 +43,7 @@ describe('Pagination', () => {
         currentPage={1}
         totalPages={5}
         onPageChange={mockOnPageChange}
-      />
+      />,
     );
 
     fireEvent.click(screen.getByText('3'));
@@ -56,7 +56,7 @@ describe('Pagination', () => {
         currentPage={1}
         totalPages={5}
         onPageChange={mockOnPageChange}
-      />
+      />,
     );
 
     const prevButton = screen.getByText('Previous');
@@ -69,7 +69,7 @@ describe('Pagination', () => {
         currentPage={5}
         totalPages={5}
         onPageChange={mockOnPageChange}
-      />
+      />,
     );
 
     const nextButton = screen.getByText('Next');
@@ -82,7 +82,7 @@ describe('Pagination', () => {
         currentPage={3}
         totalPages={5}
         onPageChange={mockOnPageChange}
-      />
+      />,
     );
 
     fireEvent.click(screen.getByText('Previous'));
@@ -95,7 +95,7 @@ describe('Pagination', () => {
         currentPage={3}
         totalPages={5}
         onPageChange={mockOnPageChange}
-      />
+      />,
     );
 
     fireEvent.click(screen.getByText('Next'));
@@ -108,7 +108,7 @@ describe('Pagination', () => {
         currentPage={1}
         totalPages={1}
         onPageChange={mockOnPageChange}
-      />
+      />,
     );
 
     expect(screen.getByText('Previous')).toBeDisabled();
@@ -122,7 +122,7 @@ describe('Pagination', () => {
         currentPage={10}
         totalPages={20}
         onPageChange={mockOnPageChange}
-      />
+      />,
     );
 
     // Should show pages around current page, not all 20
@@ -137,7 +137,7 @@ describe('Pagination', () => {
         currentPage={3}
         totalPages={5}
         onPageChange={mockOnPageChange}
-      />
+      />,
     );
 
     const pageButton = screen.getByText('4');
@@ -151,7 +151,7 @@ describe('Pagination', () => {
         currentPage={3}
         totalPages={5}
         onPageChange={mockOnPageChange}
-      />
+      />,
     );
 
     const pagination = screen.getByRole('navigation');

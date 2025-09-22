@@ -56,7 +56,7 @@ describe('API Endpoints', () => {
         species: 'Human',
         page: 2,
       });
-      
+
       expect(url).toContain('https://rickandmortyapi.com/api/character?');
       expect(url).toContain('name=Rick');
       expect(url).toContain('status=Alive');
@@ -71,7 +71,9 @@ describe('API Endpoints', () => {
 
     it('should encode special characters in search', () => {
       const url = buildCharactersSearchUrl({ name: 'Rick & Morty' });
-      expect(url).toBe('https://rickandmortyapi.com/api/character?name=Rick%20%26%20Morty');
+      expect(url).toBe(
+        'https://rickandmortyapi.com/api/character?name=Rick%20%26%20Morty',
+      );
     });
   });
 
@@ -98,7 +100,7 @@ describe('API Endpoints', () => {
 
     it('should build episodes search URL', () => {
       const url = buildEpisodesSearchUrl({ name: 'Pilot', episode: 'S01E01' });
-      
+
       expect(url).toContain('https://rickandmortyapi.com/api/episode?');
       expect(url).toContain('name=Pilot');
       expect(url).toContain('episode=S01E01');
@@ -117,7 +119,7 @@ describe('API Endpoints', () => {
         status: undefined,
         species: 'Human',
       });
-      
+
       expect(url).toContain('name=Rick');
       expect(url).toContain('species=Human');
       expect(url).not.toContain('status=');
@@ -128,7 +130,7 @@ describe('API Endpoints', () => {
         name: '',
         status: 'Alive',
       });
-      
+
       expect(url).not.toContain('name=');
       expect(url).toContain('status=Alive');
     });
@@ -138,7 +140,7 @@ describe('API Endpoints', () => {
         name: 'Rick',
         page: 1,
       });
-      
+
       expect(url).toContain('name=Rick');
       expect(url).toContain('page=1');
     });

@@ -8,8 +8,14 @@ export const mockCharacter1: Character = {
   species: 'Human',
   type: '',
   gender: 'Male',
-  origin: { name: 'Earth (C-137)', url: 'https://rickandmortyapi.com/api/location/1' },
-  location: { name: 'Earth (Replacement Dimension)', url: 'https://rickandmortyapi.com/api/location/20' },
+  origin: {
+    name: 'Earth (C-137)',
+    url: 'https://rickandmortyapi.com/api/location/1',
+  },
+  location: {
+    name: 'Earth (Replacement Dimension)',
+    url: 'https://rickandmortyapi.com/api/location/20',
+  },
   image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
   episode: [
     'https://rickandmortyapi.com/api/episode/1',
@@ -27,8 +33,14 @@ export const mockCharacter2: Character = {
   species: 'Human',
   type: '',
   gender: 'Male',
-  origin: { name: 'Earth (C-137)', url: 'https://rickandmortyapi.com/api/location/1' },
-  location: { name: 'Earth (Replacement Dimension)', url: 'https://rickandmortyapi.com/api/location/20' },
+  origin: {
+    name: 'Earth (C-137)',
+    url: 'https://rickandmortyapi.com/api/location/1',
+  },
+  location: {
+    name: 'Earth (Replacement Dimension)',
+    url: 'https://rickandmortyapi.com/api/location/20',
+  },
   image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
   episode: [
     'https://rickandmortyapi.com/api/episode/1',
@@ -61,7 +73,10 @@ export const mockEpisode1: Episode = {
   name: 'Pilot',
   air_date: 'December 2, 2013',
   episode: 'S01E01',
-  characters: ['https://rickandmortyapi.com/api/character/1', 'https://rickandmortyapi.com/api/character/2'],
+  characters: [
+    'https://rickandmortyapi.com/api/character/1',
+    'https://rickandmortyapi.com/api/character/2',
+  ],
   url: 'https://rickandmortyapi.com/api/episode/1',
   created: '2017-11-10T12:56:33.798Z',
 };
@@ -71,7 +86,10 @@ export const mockEpisode2: Episode = {
   name: 'Lawnmower Dog',
   air_date: 'December 9, 2013',
   episode: 'S01E02',
-  characters: ['https://rickandmortyapi.com/api/character/1', 'https://rickandmortyapi.com/api/character/2'],
+  characters: [
+    'https://rickandmortyapi.com/api/character/1',
+    'https://rickandmortyapi.com/api/character/2',
+  ],
   url: 'https://rickandmortyapi.com/api/episode/2',
   created: '2017-11-10T12:56:33.916Z',
 };
@@ -121,10 +139,19 @@ export const mockEpisodesResponse: ApiResponse<Episode> = {
 export const mockApiService = {
   getCharacters: jest.fn().mockResolvedValue(mockCharactersResponse),
   getCharacterById: jest.fn().mockResolvedValue(mockCharacter1),
-  getMultipleCharacters: jest.fn().mockResolvedValue([mockCharacter1, mockCharacter2]),
+  getMultipleCharacters: jest
+    .fn()
+    .mockResolvedValue([mockCharacter1, mockCharacter2]),
   searchCharacters: jest.fn().mockResolvedValue(mockCharactersResponse),
   getEpisodes: jest.fn().mockResolvedValue(mockEpisodesResponse),
   getEpisodeById: jest.fn().mockResolvedValue(mockEpisode1),
-  getMultipleEpisodes: jest.fn().mockResolvedValue([mockEpisode1, mockEpisode2, mockEpisode3, mockEpisode4]),
+  getMultipleEpisodes: jest
+    .fn()
+    .mockResolvedValue([
+      mockEpisode1,
+      mockEpisode2,
+      mockEpisode3,
+      mockEpisode4,
+    ]),
   searchEpisodes: jest.fn().mockResolvedValue(mockEpisodesResponse),
 };

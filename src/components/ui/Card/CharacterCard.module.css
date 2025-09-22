@@ -103,11 +103,11 @@
     padding: var(--spacing-sm);
     min-height: 80px;
   }
-  
+
   .name {
     font-size: 1rem;
   }
-  
+
   .statusText,
   .species {
     font-size: 0.75rem;

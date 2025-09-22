@@ -1,6 +1,10 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { CharacterCard } from '@/components/ui/Card/CharacterCard';
-import { mockCharacter1, mockDeadCharacter, mockUnknownCharacter } from '@tests/__mocks__/api';
+import {
+  mockCharacter1,
+  mockDeadCharacter,
+  mockUnknownCharacter,
+} from '@tests/__mocks__/api';
 
 describe('CharacterCard', () => {
   const mockOnSelect = jest.fn();
@@ -15,11 +19,15 @@ describe('CharacterCard', () => {
     expect(screen.getByText('Rick Sanchez')).toBeInTheDocument();
     expect(screen.getByText('Alive')).toBeInTheDocument();
     expect(screen.getByText('Human')).toBeInTheDocument();
-    expect(screen.getByRole('img', { name: /Rick Sanchez/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole('img', { name: /Rick Sanchez/i }),
+    ).toBeInTheDocument();
   });
 
   it('should render different status correctly', () => {
-    render(<CharacterCard character={mockDeadCharacter} onClick={mockOnSelect} />);
+    render(
+      <CharacterCard character={mockDeadCharacter} onClick={mockOnSelect} />,
+    );
 
     expect(screen.getByText('Dead Character')).toBeInTheDocument();
     expect(screen.getByText('Dead')).toBeInTheDocument();
@@ -27,7 +35,9 @@ describe('CharacterCard', () => {
   });
 
   it('should render unknown status correctly', () => {
-    render(<CharacterCard character={mockUnknownCharacter} onClick={mockOnSelect} />);
+    render(
+      <CharacterCard character={mockUnknownCharacter} onClick={mockOnSelect} />,
+    );
 
     expect(screen.getByText('Unknown Character')).toBeInTheDocument();
     expect(screen.getByText('unknown')).toBeInTheDocument();
@@ -53,7 +63,9 @@ describe('CharacterCard', () => {
   });
 
   it('should display status dot for dead character', () => {
-    render(<CharacterCard character={mockDeadCharacter} onClick={mockOnSelect} />);
+    render(
+      <CharacterCard character={mockDeadCharacter} onClick={mockOnSelect} />,
+    );
 
     const statusDot = screen.getByTestId('status-dot');
     expect(statusDot).toBeInTheDocument();
@@ -61,7 +73,9 @@ describe('CharacterCard', () => {
   });
 
   it('should display status dot for unknown character', () => {
-    render(<CharacterCard character={mockUnknownCharacter} onClick={mockOnSelect} />);
+    render(
+      <CharacterCard character={mockUnknownCharacter} onClick={mockOnSelect} />,
+    );
 
     const statusDot = screen.getByTestId('status-dot');
     expect(statusDot).toBeInTheDocument();

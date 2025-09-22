@@ -1,7 +1,15 @@
 import { renderHook, waitFor } from '@testing-library/react';
-import { useCharacters, useCharacter, useMultipleCharacters } from '@/hooks/api/useCharacters';
+import {
+  useCharacters,
+  useCharacter,
+  useMultipleCharacters,
+} from '@/hooks/api/useCharacters';
 import { TestQueryWrapper } from '@tests/__mocks__/queryClient';
-import { mockCharactersResponse, mockCharacter1, mockApiService } from '@tests/__mocks__/api';
+import {
+  mockCharactersResponse,
+  mockCharacter1,
+  mockApiService,
+} from '@tests/__mocks__/api';
 
 // Mock the API service
 jest.mock('@/services/api', () => mockApiService);
@@ -51,13 +59,10 @@ describe('useCharacters', () => {
   it('should refetch when page changes', async () => {
     mockApiService.getCharacters.mockResolvedValue(mockCharactersResponse);
 
-    const { result, rerender } = renderHook(
-      ({ page }) => useCharacters(page),
-      {
-        wrapper: TestQueryWrapper,
-        initialProps: { page: 1 },
-      }
-    );
+    const { result, rerender } = renderHook(({ page }) => useCharacters(page), {
+      wrapper: TestQueryWrapper,
+      initialProps: { page: 1 },
+    });
 
     await waitFor(() => {
       expect(result.current.isSuccess).toBe(true);
@@ -103,7 +108,9 @@ describe('useMultipleCharacters', () => {
   it('should fetch multiple characters successfully', async () => {
     const ids = [1, 2];
     const expectedCharacters = [mockCharacter1, mockApiService.mockCharacter2];
-    mockApiService.getMultipleCharacters.mockResolvedValueOnce(expectedCharacters);
+    mockApiService.getMultipleCharacters.mockResolvedValueOnce(
+      expectedCharacters,
+    );
 
     const { result } = renderHook(() => useMultipleCharacters(ids), {
       wrapper: TestQueryWrapper,

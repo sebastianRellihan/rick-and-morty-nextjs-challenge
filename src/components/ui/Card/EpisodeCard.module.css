@@ -100,17 +100,17 @@
   .episodeCard {
     padding: var(--spacing-sm);
   }
-  
+
   .header {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--spacing-xs);
   }
-  
+
   .title {
     font-size: 0.875rem;
   }
-  
+
   .episodeCode {
     font-size: 0.7rem;
   }

@@ -58,16 +58,16 @@
   .page {
     padding: var(--spacing-lg);
   }
-  
+
   .title {
     font-size: 2.5rem;
   }
-  
+
   .charactersGrid {
     grid-template-columns: 1fr;
     gap: var(--spacing-xl);
   }
-  
+
   .characterColumn {
     min-height: auto;
   }
@@ -77,11 +77,11 @@
   .page {
     padding: var(--spacing-md);
   }
-  
+
   .title {
     font-size: 2rem;
   }
-  
+
   .subtitle {
     font-size: 1rem;
   }

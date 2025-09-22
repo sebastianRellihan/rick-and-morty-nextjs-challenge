@@ -1,4 +1,9 @@
-import { getCharacters, getCharacterById, getMultipleCharacters, searchCharacters } from '@/services/api/rickAndMortyAPI';
+import {
+  getCharacters,
+  getCharacterById,
+  getMultipleCharacters,
+  searchCharacters,
+} from '@/services/api/rickAndMortyAPI';
 import { mockCharactersResponse, mockCharacter1 } from '@tests/__mocks__/api';
 
 // Mock fetch
@@ -29,7 +34,7 @@ describe('rickAndMortyAPI', () => {
           headers: {
             'Content-Type': 'application/json',
           },
-        })
+        }),
       );
     });
 
@@ -93,7 +98,7 @@ describe('rickAndMortyAPI', () => {
       }
       expect(mockFetch).toHaveBeenCalledWith(
         'https://rickandmortyapi.com/api/character/1',
-        expect.any(Object)
+        expect.any(Object),
       );
     });
 
@@ -130,7 +135,7 @@ describe('rickAndMortyAPI', () => {
       }
       expect(mockFetch).toHaveBeenCalledWith(
         'https://rickandmortyapi.com/api/character/1,2',
-        expect.any(Object)
+        expect.any(Object),
       );
     });
 
@@ -160,7 +165,7 @@ describe('rickAndMortyAPI', () => {
       }
       expect(mockFetch).toHaveBeenCalledWith(
         expect.stringContaining('name=Rick'),
-        expect.any(Object)
+        expect.any(Object),
       );
     });
 
@@ -179,7 +184,7 @@ describe('rickAndMortyAPI', () => {
       expect(result.success).toBe(true);
       const lastCall = mockFetch.mock.calls[mockFetch.mock.calls.length - 1];
       const url = lastCall[0] as string;
-      
+
       expect(url).toContain('name=Rick');
       expect(url).toContain('status=Alive');
       expect(url).toContain('species=Human');
@@ -190,7 +195,7 @@ describe('rickAndMortyAPI', () => {
         info: { count: 0, pages: 1, next: null, prev: null },
         results: [],
       };
-      
+
       mockFetch.mockResolvedValueOnce({
         ok: true,
         json: async () => emptyResponse,

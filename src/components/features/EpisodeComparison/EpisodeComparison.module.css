@@ -83,7 +83,6 @@
   text-align: center;
 }
 
-
 .emptyMessage {
   color: var(--color-light-green);
   font-size: 1.125rem;
@@ -108,7 +107,7 @@
     grid-template-columns: 1fr;
     gap: var(--spacing-lg);
   }
-  
+
   .episodeColumn {
     min-height: 200px;
   }
@@ -118,15 +117,14 @@
   .container {
     padding: var(--spacing-lg);
   }
-  
+
   .title {
     font-size: 1.5rem;
   }
-  
+
   .placeholder {
     height: 150px;
   }
-  
 }
 
 /* Error State */

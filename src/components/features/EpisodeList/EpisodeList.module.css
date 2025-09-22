@@ -84,21 +84,21 @@
     padding: var(--spacing-md);
     min-height: 300px;
   }
-  
+
   .header {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--spacing-sm);
   }
-  
+
   .title {
     font-size: 1.125rem;
   }
-  
+
   .content {
     min-height: 250px;
   }
-  
+
   .loading,
   .empty {
     height: 250px;

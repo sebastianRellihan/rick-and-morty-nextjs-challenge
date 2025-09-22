@@ -1,7 +1,15 @@
 import { renderHook, waitFor } from '@testing-library/react';
-import { useEpisodes, useEpisode, useMultipleEpisodes } from '@/hooks/api/useEpisodes';
+import {
+  useEpisodes,
+  useEpisode,
+  useMultipleEpisodes,
+} from '@/hooks/api/useEpisodes';
 import { TestQueryWrapper } from '@tests/__mocks__/queryClient';
-import { mockEpisodesResponse, mockEpisode1, mockApiService } from '@tests/__mocks__/api';
+import {
+  mockEpisodesResponse,
+  mockEpisode1,
+  mockApiService,
+} from '@tests/__mocks__/api';
 
 // Mock the API service
 jest.mock('@/services/api', () => mockApiService);
@@ -108,13 +116,13 @@ describe('useMultipleEpisodes', () => {
 
   it('should handle enabled/disabled state', async () => {
     const ids = [1, 2];
-    
+
     const { result, rerender } = renderHook(
       ({ enabled }) => useMultipleEpisodes(ids, { enabled }),
       {
         wrapper: TestQueryWrapper,
         initialProps: { enabled: false },
-      }
+      },
     );
 
     expect(result.current.data).toBeUndefined();
