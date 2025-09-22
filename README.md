@@ -9,12 +9,14 @@ Built with Next.js, React, and TypeScript that allows users to select two Rick a
 ## Installation
 
 1. Clone the repository:
+
 ```bash
 git clone <repository-url>
 cd rick-and-morty-nextjs-challenge
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
@@ -32,17 +34,20 @@ Open [http://localhost:3000](http://localhost:3000) to view the application in y
 ### Available Scripts
 
 #### Development
+
 - `npm run dev` - Start development server with Turbopack
 - `npm run build` - Build for production
 - `npm start` - Start production server
 
 #### Code Quality
+
 - `npm run lint` - Run ESLint with automatic fixes
 - `npm run lint:check` - Check linting without fixes
 - `npm run format` - Format code with Prettier
 - `npm run format:check` - Check formatting without changes
 
 #### Testing
+
 - `npm test` - Run all tests
 - `npm run test:watch` - Run tests in watch mode
 - `npm run test:coverage` - Run tests with coverage report
@@ -55,8 +60,9 @@ Always run these commands before starting development:
 
 ```bash
 npm run lint:check    # Verify no linting errors
-npm test             # Verify all tests pass
-npm run build        # Verify application builds successfully
+npm run format:check  # Verify no format errors
+npm test              # Verify all tests pass
+npm run build         # Verify application builds successfully
 ```
 
 ### Before Committing
@@ -77,7 +83,7 @@ npm run build        # Verify build works
 - **Framework**: Next.js 15.5.3 (App Router)
 - **Language**: TypeScript 5.0
 - **Styling**: CSS Modules with custom design system
-- **State Management**: 
+- **State Management**:
   - TanStack Query (Server state)
   - Zustand (Client state with localStorage persistence)
 - **API**: Rick and Morty REST API
