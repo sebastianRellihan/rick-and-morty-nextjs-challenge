@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { CharacterCard } from '@/components/ui/Card/CharacterCard';
-import { mockCharacter1, mockDeadCharacter, mockUnknownCharacter } from '@tests/__mocks__/api';
+import { mockCharacter1, mockDeadCharacter } from '@tests/__mocks__/api';
 
 describe('CharacterCard', () => {
   const mockOnClick = jest.fn();
@@ -19,7 +19,9 @@ describe('CharacterCard', () => {
   });
 
   it('should render different status correctly', () => {
-    render(<CharacterCard character={mockDeadCharacter} onClick={mockOnClick} />);
+    render(
+      <CharacterCard character={mockDeadCharacter} onClick={mockOnClick} />,
+    );
 
     expect(screen.getByText('Dead Character')).toBeInTheDocument();
     expect(screen.getByText('Dead')).toBeInTheDocument();

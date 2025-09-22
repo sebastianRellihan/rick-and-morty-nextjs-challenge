@@ -1,10 +1,7 @@
 import { renderHook, waitFor } from '@testing-library/react';
 import { useCharacters, useCharacter } from '@/hooks/api/useCharacters';
 import { TestQueryWrapper } from '@tests/__mocks__/queryClient';
-import {
-  mockCharactersResponse,
-  mockCharacter1,
-} from '@tests/__mocks__/api';
+import { mockCharactersResponse, mockCharacter1 } from '@tests/__mocks__/api';
 
 // Mock the API service
 jest.mock('@/services/api', () => ({
@@ -16,8 +13,12 @@ jest.mock('@/services/api', () => ({
 
 // Import the mocked module
 import * as apiService from '@/services/api';
-const mockGetCharacters = apiService.getCharacters as jest.MockedFunction<typeof apiService.getCharacters>;
-const mockGetCharacterById = apiService.getCharacterById as jest.MockedFunction<typeof apiService.getCharacterById>;
+const mockGetCharacters = apiService.getCharacters as jest.MockedFunction<
+  typeof apiService.getCharacters
+>;
+const mockGetCharacterById = apiService.getCharacterById as jest.MockedFunction<
+  typeof apiService.getCharacterById
+>;
 
 describe('useCharacters', () => {
   beforeEach(() => {

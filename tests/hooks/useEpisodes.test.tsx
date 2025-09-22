@@ -13,8 +13,12 @@ jest.mock('@/services/api', () => ({
 
 // Import the mocked module
 import * as apiService from '@/services/api';
-const mockGetEpisodes = apiService.getEpisodes as jest.MockedFunction<typeof apiService.getEpisodes>;
-const mockGetEpisodeById = apiService.getEpisodeById as jest.MockedFunction<typeof apiService.getEpisodeById>;
+const mockGetEpisodes = apiService.getEpisodes as jest.MockedFunction<
+  typeof apiService.getEpisodes
+>;
+const mockGetEpisodeById = apiService.getEpisodeById as jest.MockedFunction<
+  typeof apiService.getEpisodeById
+>;
 
 describe('useEpisodes', () => {
   beforeEach(() => {

@@ -14,7 +14,7 @@ describe('Pagination', () => {
         currentPage={1}
         totalPages={5}
         onPageChange={mockOnPageChange}
-      />
+      />,
     );
 
     expect(screen.getByText('1')).toBeInTheDocument();
@@ -28,7 +28,7 @@ describe('Pagination', () => {
         currentPage={3}
         totalPages={5}
         onPageChange={mockOnPageChange}
-      />
+      />,
     );
 
     const currentPageButton = screen.getByText('3');
@@ -41,7 +41,7 @@ describe('Pagination', () => {
         currentPage={1}
         totalPages={5}
         onPageChange={mockOnPageChange}
-      />
+      />,
     );
 
     fireEvent.click(screen.getByText('3'));
@@ -54,7 +54,7 @@ describe('Pagination', () => {
         currentPage={1}
         totalPages={5}
         onPageChange={mockOnPageChange}
-      />
+      />,
     );
 
     const prevButton = screen.getByLabelText('Previous page');
@@ -67,7 +67,7 @@ describe('Pagination', () => {
         currentPage={3}
         totalPages={5}
         onPageChange={mockOnPageChange}
-      />
+      />,
     );
 
     const pagination = screen.getByRole('navigation');
