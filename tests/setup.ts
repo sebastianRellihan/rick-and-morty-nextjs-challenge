@@ -68,19 +68,19 @@ Object.defineProperty(window, 'matchMedia', {
 global.fetch = jest.fn();
 
 // Mock console methods to reduce noise in tests
-const originalError = console.error;
-beforeAll(() => {
-  console.error = (...args: any[]) => {
-    if (
-      typeof args[0] === 'string' &&
-      args[0].includes('Warning: ReactDOMTestUtils.act is deprecated')
-    ) {
-      return;
-    }
-    originalError.call(console, ...args);
-  };
-});
+// const originalError = console.error;
+// beforeAll(() => {
+//   console.error = (...args: unknown[]) => {
+//     if (
+//       typeof args[0] === 'string' &&
+//       args[0].includes('Warning: ReactDOMTestUtils.act is deprecated')
+//     ) {
+//       return;
+//     }
+//     originalError.call(console, ...args);
+//   };
+// });
 
-afterAll(() => {
-  console.error = originalError;
-});
+// afterAll(() => {
+//   console.error = originalError;
+// });
